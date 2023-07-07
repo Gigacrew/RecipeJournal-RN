@@ -1,13 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import PageHeader from './src/components/Header';
-import RecipeDetail from './src/components/RecipeDetail';
+import React from 'react';
+import Header from './src/components/Header';
+import ShoppingListPage from './src/components/ShoppingListPage';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <PageHeader></PageHeader>
-      <RecipeDetail></RecipeDetail>
+      <Header></Header>
+      <ShoppingListPage></ShoppingListPage>
     </View>
   );
 }
@@ -15,6 +16,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#46288b'
+    backgroundColor: '#fff',
   },
 });
+

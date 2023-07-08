@@ -3,10 +3,14 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
   Home: HomeScreenCustomProps;
-  Details: { text: string };
+  Details: DetailsScreenCustomProps;
 };
 
 type HomeScreenCustomProps = {
+  text: string;
+  title?: string;
+};
+type DetailsScreenCustomProps = {
   text: string;
   title?: string;
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import {
   NavigationBarProps,
   RootStackParamList,
@@ -9,6 +9,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
   const screens: RootStackParamList = {
     Home: {
       text: "Home",
+      title: " Came from Nav Bar",
     },
     Details: { text: "Details" },
   };
@@ -16,21 +17,46 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
   const screenNames: (keyof RootStackParamList)[] = Object.keys(
     screens
   ) as (keyof RootStackParamList)[];
-  const navigateToScreen = (screenName: keyof RootStackParamList) => {
-    navigation.navigate(screenName);
+  const navigateToScreen = (
+    screenName: keyof RootStackParamList,
+    params: RootStackParamList[typeof screenName]
+  ) => {
+    navigation.navigate(screenName, params);
   };
+  const styles = StyleSheet.create({
+    button: {
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      paddingVertical: 12,
+      paddingHorizontal: 32,
+      marginBottom: 20,
+      marginHorizontal: 10,
+      borderRadius: 4,
+      elevation: 3,
+      backgroundColor: "black",
+    },
+    text: {
+      fontSize: 16,
+      lineHeight: 21,
+      fontWeight: "bold",
+      letterSpacing: 0.25,
+      color: "white",
+    },
+  });
 
   return (
-    <View>
+    <View style={{ flexDirection: "row", justifyContent: "center" }}>
       {screenNames.map((screenName) => (
-        <Button
+        <Pressable
+          style={styles.button}
           key={screenName}
-          title={screens[screenName].text}
-          onPress={() => navigateToScreen(screenName)}
-        />
+          onPress={() => navigateToScreen(screenName, screens[screenName])}
+        >
+          <Text style={styles.text}>{screens[screenName].text}</Text>
+        </Pressable>
       ))}
     </View>
   );
 };
-
 export default NavigationBar;

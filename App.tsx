@@ -35,6 +35,7 @@ export default function App() {
           initialParams={{ title: "Look I Started Here" }}
         />
         <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Recipe" component={RecipeDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );

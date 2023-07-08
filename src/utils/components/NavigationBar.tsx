@@ -8,10 +8,11 @@ import {
 const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
   const screens: RootStackParamList = {
     Home: {
-      text: "Home",
+      navButtonText: "Home",
       title: " Came from Nav Bar",
     },
-    Details: { text: "Details" },
+    Details: { navButtonText: "Details" },
+    Recipe: { navButtonText: "Recipe Detail", title: "Recipe Name" },
   };
 
   const screenNames: (keyof RootStackParamList)[] = Object.keys(
@@ -53,7 +54,7 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
           key={screenName}
           onPress={() => navigateToScreen(screenName, screens[screenName])}
         >
-          <Text style={styles.text}>{screens[screenName].text}</Text>
+          <Text style={styles.text}>{screens[screenName].navButtonText}</Text>
         </Pressable>
       ))}
     </View>

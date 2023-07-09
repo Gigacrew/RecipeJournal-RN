@@ -9,10 +9,13 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
   const screens: RootStackParamList = {
     Home: {
       navButtonText: "Home",
-      title: " Came from Nav Bar",
+      text: " Came from Nav Bar",
     },
-    Details: { navButtonText: "Details" },
-    Recipe: { navButtonText: "Recipe Detail", title: "Recipe Name" },
+    Recipe: { navButtonText: "Recipe", title: "Recipe Name" },
+    MealPlanDetails: {
+      navButtonText: "Meal Plan ",
+      text: "Meal Plan Details",
+    },
   };
 
   const screenNames: (keyof RootStackParamList)[] = Object.keys(

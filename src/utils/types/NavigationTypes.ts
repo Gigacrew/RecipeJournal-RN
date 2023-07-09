@@ -2,17 +2,25 @@ import { RouteProp } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 export type RootStackParamList = {
-  Home: HomeScreenCustomProps;
-  Details: DetailsScreenCustomProps;
-  Recipe: RecipeDetailCustomProps;
+  Home?: HomeScreenCustomProps;
+  Details?: DetailsScreenCustomProps;
+  Recipe?: RecipeDetailCustomProps;
+  MealPlanDetails?: MealPlanDetailsScreenCustomProps;
 };
 
 type HomeScreenCustomProps = {
   navButtonText: string;
   title?: string;
+  text?: string;
 };
 type DetailsScreenCustomProps = {
   navButtonText: string;
+  text?: string;
+  title?: string;
+};
+type MealPlanDetailsScreenCustomProps = {
+  navButtonText: string;
+  text?: string;
   title?: string;
 };
 type RecipeDetailCustomProps = {
@@ -36,9 +44,22 @@ type RecipeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Recipe"
 >;
+type MealPlanDetailsScreenRouteProp = RouteProp<
+  RootStackParamList,
+  "MealPlanDetails"
+>;
+type MealPlanDetailsScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "MealPlanDetails"
+>;
+
 export type DetailsScreenProps = {
   navigation: DetailsScreenNavigationProp;
   route: DetailsScreenRouteProp;
+};
+export type MealPlanDetailsScreenProps = {
+  navigation: MealPlanDetailsScreenNavigationProp;
+  route: MealPlanDetailsScreenRouteProp;
 };
 export type HomeScreenProps = {
   navigation: HomeScreenNavigationProp;

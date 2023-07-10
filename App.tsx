@@ -11,7 +11,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import React from "react";
 import NavigationBar from "./src/utils/components/NavigationBar";
-import AddNewRecipe from "./src/components/AddNewRecipe
+import AddNewRecipe from "./src/components/AddNewRecipe";
 import MealPlanDetailsScreen from "./src/components/MealPlanDetails";
 
 const Stack = createBottomTabNavigator<RootStackParamList>();

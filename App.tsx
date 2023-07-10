@@ -11,6 +11,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import React from "react";
 import NavigationBar from "./src/utils/components/NavigationBar";
+import MealPlanDetailsScreen from "./src/components/MealPlanDetails";
 
 const Stack = createBottomTabNavigator<RootStackParamList>();
 
@@ -32,9 +33,12 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          initialParams={{ title: "Look I Started Here" }}
+          initialParams={{ text: "Look I Started Here" }}
         />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen
+          name="MealPlanDetails"
+          component={MealPlanDetailsScreen}
+        />
         <Stack.Screen name="Recipe" component={RecipeDetail} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -5,7 +5,7 @@ import { HomeScreenProps } from "../utils/types/NavigationTypes";
 const HomeScreen: React.FC<HomeScreenProps> = ({ navigation, route }) => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>{route.params?.title}</Text>
+      <Text>{route.params?.text}</Text>
     </View>
   );
 };

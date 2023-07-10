@@ -21,12 +21,14 @@ const NavigationBar: React.FC<NavigationBarProps> = ({ navigation }) => {
   const screenNames: (keyof RootStackParamList)[] = Object.keys(
     screens
   ) as (keyof RootStackParamList)[];
+
   const navigateToScreen = (
     screenName: keyof RootStackParamList,
     params: RootStackParamList[typeof screenName]
   ) => {
     navigation.navigate(screenName, params);
   };
+  
   const styles = StyleSheet.create({
     button: {
       flex: 1,

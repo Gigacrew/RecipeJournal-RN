@@ -11,6 +11,7 @@ import {
 } from "@react-navigation/bottom-tabs";
 import React from "react";
 import NavigationBar from "./src/utils/components/NavigationBar";
+import AddNewRecipe from "./src/components/AddNewRecipe";
 import MealPlanDetailsScreen from "./src/components/MealPlanDetails";
 
 const Stack = createBottomTabNavigator<RootStackParamList>();
@@ -40,6 +41,7 @@ export default function App() {
           component={MealPlanDetailsScreen}
         />
         <Stack.Screen name="Recipe" component={RecipeDetail} />
+        <Stack.Screen name="AddNewRecipe" component={AddNewRecipe} />
       </Stack.Navigator>
     </NavigationContainer>
   );

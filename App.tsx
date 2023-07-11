@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { RootStackParamList } from "./src/utils/types/NavigationTypes";
+import RecipeList from "./src/components/RecipeListView";
 import RecipeDetail from "./src/components/RecipeDetail";
 import HomeScreen from "./src/components/HomeScreen";
 import DetailsScreen from "./src/components/DetailsScreen";
@@ -40,6 +41,7 @@ export default function App() {
           name="MealPlanDetails"
           component={MealPlanDetailsScreen}
         />
+        <Stack.Screen name="RecipeList" component={RecipeList} options={({ navigation }) => ({ navigation })}/>
         <Stack.Screen name="Recipe" component={RecipeDetail} />
         <Stack.Screen name="AddNewRecipe" component={AddNewRecipe} />
       </Stack.Navigator>

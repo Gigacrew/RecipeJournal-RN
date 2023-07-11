@@ -25,7 +25,7 @@ type MealPlanDetailsScreenCustomProps = {
   title?: string;
 };
 type RecipeListCustomProps = {
-  itle?: string;
+  title?: string;
   navButtonText: string;
 };
 type RecipeDetailCustomProps = {

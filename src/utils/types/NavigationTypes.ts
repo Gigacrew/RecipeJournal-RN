@@ -9,28 +9,39 @@ export type RootStackParamList = {
   MealPlanDetails?: MealPlanDetailsScreenCustomProps;
 };
 
+export type Recipe = {
+  title: string;
+  servings: string;
+  description: string;
+  instructions: string[];
+  ingredients: string[];
+  type: string;
+  imgURL: string;
+};
+
 type HomeScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   title?: string;
   text?: string;
 };
 type DetailsScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   text?: string;
   title?: string;
 };
 type MealPlanDetailsScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   text?: string;
   title?: string;
 };
 type RecipeListCustomProps = {
   title?: string;
-  navButtonText: string;
+  navButtonText?: string;
 };
 type RecipeDetailCustomProps = {
   title?: string;
-  navButtonText: string;
+  navButtonText?: string;
+  recipe?: Recipe;
 };
 
 type DetailsScreenRouteProp = RouteProp<RootStackParamList, "Details">;

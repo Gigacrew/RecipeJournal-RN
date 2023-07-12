@@ -41,7 +41,11 @@ export default function App() {
           name="MealPlanDetails"
           component={MealPlanDetailsScreen}
         />
-        <Stack.Screen name="RecipeList" component={RecipeList} options={({ navigation }) => ({ navigation })}/>
+        <Stack.Screen
+          name="RecipeList"
+          component={RecipeList}
+          options={({ navigation }) => ({ navigation })}
+        />
         <Stack.Screen name="Recipe" component={RecipeDetail} />
         <Stack.Screen name="AddNewRecipe" component={AddNewRecipe} />
       </Stack.Navigator>

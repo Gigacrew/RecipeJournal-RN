@@ -14,6 +14,7 @@ import React from "react";
 import NavigationBar from "./src/utils/components/NavigationBar";
 import AddNewRecipe from "./src/components/AddNewRecipe";
 import MealPlanDetailsScreen from "./src/components/MealPlanDetails";
+import ShoppingList from "./src/components/ShoppingList";
 
 const Stack = createBottomTabNavigator<RootStackParamList>();
 
@@ -35,7 +36,7 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          initialParams={{ text: "Look I Started Here" }}
+          initialParams={{ title: "Welcome to Your Recipe Journal" }}
         />
         <Stack.Screen
           name="MealPlanDetails"
@@ -48,6 +49,7 @@ export default function App() {
         />
         <Stack.Screen name="Recipe" component={RecipeDetail} />
         <Stack.Screen name="AddNewRecipe" component={AddNewRecipe} />
+        <Stack.Screen name="ShoppingList" component={ShoppingList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

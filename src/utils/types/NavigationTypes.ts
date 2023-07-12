@@ -7,6 +7,7 @@ export type RootStackParamList = {
   RecipeList?: RecipeListCustomProps;
   Recipe?: RecipeDetailCustomProps;
   MealPlanDetails?: MealPlanDetailsScreenCustomProps;
+  ShoppingList?: ShoppingListCustomProps;
 };
 
 export type Recipe = {
@@ -43,6 +44,10 @@ type RecipeDetailCustomProps = {
   navButtonText?: string;
   recipe?: Recipe;
 };
+type ShoppingListCustomProps = {
+  title?: string;
+  navButtonText?: string;
+};
 
 type DetailsScreenRouteProp = RouteProp<RootStackParamList, "Details">;
 type DetailsScreenNavigationProp = NativeStackNavigationProp<
@@ -58,6 +63,14 @@ type RecipeListScreenRouteProp = RouteProp<RootStackParamList, "RecipeList">;
 type RecipeListScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "RecipeList"
+>;
+type ShoppingListScreenRouteProp = RouteProp<
+  RootStackParamList,
+  "ShoppingList"
+>;
+type ShoppingListScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "ShoppingList"
 >;
 type RecipeScreenRouteProp = RouteProp<RootStackParamList, "Recipe">;
 type RecipeScreenNavigationProp = NativeStackNavigationProp<
@@ -88,6 +101,10 @@ export type HomeScreenProps = {
 export type RecipeListScreenProps = {
   navigation: RecipeListScreenNavigationProp;
   route: RecipeListScreenRouteProp;
+};
+export type ShoppingListScreenProps = {
+  navigation: ShoppingListScreenNavigationProp;
+  route: ShoppingListScreenRouteProp;
 };
 export type RecipeScreenProps = {
   navigation: RecipeScreenNavigationProp;

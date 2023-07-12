@@ -6,31 +6,53 @@ export type RootStackParamList = {
   Details?: DetailsScreenCustomProps;
   RecipeList?: RecipeListCustomProps;
   Recipe?: RecipeDetailCustomProps;
+  AddNewRecipe?: AddRecipeCustomProps;
   MealPlanDetails?: MealPlanDetailsScreenCustomProps;
+  ShoppingList?: ShoppingListCustomProps;
+};
+
+export type Recipe = {
+  title: string;
+  servings: string;
+  description: string;
+  instructions: string[];
+  ingredients: string[];
+  type: string;
+  imgURL: string;
 };
 
 type HomeScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   title?: string;
   text?: string;
 };
 type DetailsScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   text?: string;
   title?: string;
 };
 type MealPlanDetailsScreenCustomProps = {
-  navButtonText: string;
+  navButtonText?: string;
   text?: string;
   title?: string;
 };
 type RecipeListCustomProps = {
   title?: string;
-  navButtonText: string;
+  navButtonText?: string;
 };
 type RecipeDetailCustomProps = {
   title?: string;
-  navButtonText: string;
+  navButtonText?: string;
+  recipe?: Recipe;
+};
+type AddRecipeCustomProps = {
+  title?: string;
+  navButtonText?: string;
+  recipe?: Recipe;
+};
+type ShoppingListCustomProps = {
+  title?: string;
+  navButtonText?: string;
 };
 
 type DetailsScreenRouteProp = RouteProp<RootStackParamList, "Details">;
@@ -48,11 +70,26 @@ type RecipeListScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "RecipeList"
 >;
+type ShoppingListScreenRouteProp = RouteProp<
+  RootStackParamList,
+  "ShoppingList"
+>;
+type ShoppingListScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "ShoppingList"
+>;
 type RecipeScreenRouteProp = RouteProp<RootStackParamList, "Recipe">;
 type RecipeScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Recipe"
 >;
+
+type AddRecipeRouteProp = RouteProp<RootStackParamList, "AddNewRecipe">;
+type AddRecipeNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "AddNewRecipe"
+>;
+
 type MealPlanDetailsScreenRouteProp = RouteProp<
   RootStackParamList,
   "MealPlanDetails"
@@ -78,7 +115,15 @@ export type RecipeListScreenProps = {
   navigation: RecipeListScreenNavigationProp;
   route: RecipeListScreenRouteProp;
 };
+export type ShoppingListScreenProps = {
+  navigation: ShoppingListScreenNavigationProp;
+  route: ShoppingListScreenRouteProp;
+};
 export type RecipeScreenProps = {
+  navigation: RecipeScreenNavigationProp;
+  route: RecipeScreenRouteProp;
+};
+export type AddRecipeScreenProps = {
   navigation: RecipeScreenNavigationProp;
   route: RecipeScreenRouteProp;
 };

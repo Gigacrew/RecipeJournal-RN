@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  Button,
   TextInput,
   Switch,
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
 import { MealPlanDetailsScreenProps } from "../utils/types/NavigationTypes";
-import NavigationBar from "../utils/components/NavigationBar";
 import Checkbox from "../utils/components/Checkbox";
 import { Ionicons } from "@expo/vector-icons";
 

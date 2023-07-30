@@ -2,7 +2,6 @@ import React from "react";
 import {
   View,
   Text,
-  Button,
   TextInput,
   StyleSheet,
   TouchableHighlight,
@@ -14,14 +13,9 @@ const AddNewRecipe: React.FC<AddRecipeScreenProps> = ({
   route,
 }) => {
   return (
-    <View style={{ flex: 1, backgroundColor: "white" }}>
+    <View style={styles.mainContainer}>
       <Text
-        style={{
-          textAlign: "center",
-          fontSize: 32,
-          fontWeight: "bold",
-          marginTop: 18,
-        }}
+        style={styles.recipeHeader}
       >
         Add New Recipe
       </Text>
@@ -75,34 +69,15 @@ const AddNewRecipe: React.FC<AddRecipeScreenProps> = ({
         <TextInput />
 
         <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            margin: 20,
-          }}
+          style={styles.buttonContainer}
         >
           <TouchableHighlight
-            style={{
-              borderWidth: 4,
-              borderColor: "#873e23",
-              height: 40,
-              width: 120,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 8,
-            }}
+            style={styles.cancelButton}
           >
             <Text>Cancel</Text>
           </TouchableHighlight>
           <TouchableHighlight
-            style={{
-              backgroundColor: "#873e23",
-              height: 40,
-              width: 120,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 8,
-            }}
+            style={styles.addRecipeButton}
           >
             <Text style={{ color: "white" }}>Add Recipe</Text>
           </TouchableHighlight>
@@ -113,6 +88,10 @@ const AddNewRecipe: React.FC<AddRecipeScreenProps> = ({
 };
 
 const styles = StyleSheet.create({
+  mainContainer: { 
+    flex: 1, 
+    backgroundColor: "white" 
+  },
   input: {
     height: 40,
     marginTop: 12,
@@ -129,6 +108,34 @@ const styles = StyleSheet.create({
     borderColor: "lightgray",
     borderRadius: 4,
   },
+  addRecipeButton : {
+    backgroundColor: "#873e23",
+    height: 40,
+    width: 120,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 8,
+  },
+  cancelButton : {
+    borderWidth: 4,
+    borderColor: "#873e23",
+    height: 40,
+    width: 120,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 8,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: 20,
+  },
+  recipeHeader : {
+    textAlign: "center",
+    fontSize: 32,
+    fontWeight: "bold",
+    marginTop: 18,
+  }
 });
 
 export default AddNewRecipe;
